@@ -1,0 +1,12 @@
+alias m2s="sed -E \
+  -e '/<!-- task-begin -->/,/<!-- task-end -->/d' \
+  -e '/# task-begin/,/# task-end/d' \
+  -e '/# solution-(begin|end)/d' \
+  -e '/<!-- solution-(begin|end)/d'"
+alias m2t="sed -E \
+  -e 's/^author:.*|.*# yaml-author.*/author: \"Your Name\"/' \
+  -e 's/^date:.*/date: 2018-/' \
+  -e '/<!-- solution-begin -->/,/<!-- solution-end -->/d' \
+  -e '/# solution-begin/,/# solution-end/d' \
+  -e '/# task-(begin|end)/d' \
+  -e '/<!-- task-(begin|end)/d'"
